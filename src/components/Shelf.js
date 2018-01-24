@@ -10,7 +10,11 @@ class Shelf extends Component {
         shelfType: PropTypes.object
     }
 
-    // handleChangeBook = (book, shelf) => {
+    handleChangeBook = (book, shelf) => {
+        const { onChange } = this.props;
+        if (onChange) {
+            onChange.call(this, book, shelf);
+        }
     //     BooksAPI.update(book, shelf).then((response) => {
     //         let booksTemp = this.state.books.slice();
     //         booksTemp.find((result) => book.id === result.id).shelf = shelf;
@@ -18,7 +22,7 @@ class Shelf extends Component {
     //             books: booksTemp
     //         }, this.handleChangeShelfs(response))
     //     })
-    // }
+    }
 
     render () {
         const { books, shelfType } = this.props;
