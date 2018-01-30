@@ -5,10 +5,6 @@ import * as BooksAPI from '../BooksAPI'
 
 class BookShelf extends Component {
     
-    // static propTypes = {
-    //     onChange: PropTypes.func.isRequired
-    // }
-
     state = {
         shelfTypes : [
             {type: 'currentlyReading', desc: 'Currently Reading'},
@@ -25,7 +21,6 @@ class BookShelf extends Component {
     }
 
     handleChangeBook = (book, shelf) => {
-        // const { onChange } = this.props;
         const { booksShelf } = this.state;
         BooksAPI.update(book, shelf).then((response) => {
             let booksTemp = booksShelf.slice();

@@ -15,13 +15,6 @@ class Shelf extends Component {
         if (onChange) {
             onChange.call(this, book, shelf);
         }
-    //     BooksAPI.update(book, shelf).then((response) => {
-    //         let booksTemp = this.state.books.slice();
-    //         booksTemp.find((result) => book.id === result.id).shelf = shelf;
-    //         this.setState({
-    //             books: booksTemp
-    //         }, this.handleChangeShelfs(response))
-    //     })
     }
 
     render () {
